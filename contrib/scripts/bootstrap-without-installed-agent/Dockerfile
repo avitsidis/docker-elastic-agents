@@ -1,7 +1,7 @@
 FROM centos:7.3.1611
 
 RUN yum update -y && \
-    yum install java-1.8.0-openjdk-headless git
+    yum install -y java-1.8.0-openjdk-headless git
 
 # download tini to ensure that an init process exists
 ADD https://github.com/krallin/tini/releases/download/v0.14.0/tini /tini
