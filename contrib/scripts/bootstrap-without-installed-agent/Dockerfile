@@ -1,9 +1,7 @@
-FROM ...
+FROM centos:7.3.1611
 
-# GoCD agent needs the jdk and git/svn/mercurial...
-# Uncomment one of the lines below to ensure that openjdk is installed.
-# apt-get install openjdk-8-jre-headless git
-# yum install java-1.8.0-openjdk-headless git
+RUN yum update -y && \
+    yum install java-1.8.0-openjdk-headless git
 
 # download tini to ensure that an init process exists
 ADD https://github.com/krallin/tini/releases/download/v0.14.0/tini /tini
